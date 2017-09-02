@@ -30,3 +30,6 @@
 .ms-navigation__content__title, .ms-navigation__content__subtitle, .ms-navigation__content__text {
   margin-bottom: 20px; }
 
+.ms-Button{
+  margin-left: 100px;
+}

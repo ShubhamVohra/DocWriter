@@ -1,3 +1,4 @@
 {
-    "https": true
+    "https": true,
+    "ghostMode":false
 }

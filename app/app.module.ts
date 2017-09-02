@@ -20,18 +20,21 @@ import { BrandFooterComponent} from './shared/brand-footer/brand.footer.componen
 import { ContextualMenuButtonComponent } from './shared/contextual-menu-button/contextual.menu.button.component';
 import { FabricContextualMenuWrapperComponent } from './shared/office-fabric-component-wrappers/fabric.contextual.menu.wrapper.component';
 import { FabricTextFieldWrapperComponent } from './shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component';
-
+import { HttpModule } from '@angular/http';
 // The WordDocumentService provides methods for manipulating the document.
 import { WordDocumentService } from './services/word-document/word.document.service';
 
 // The SettingsStorageService provides CRUD operations on application settings.
 import { SettingsStorageService } from './services/settings-storage/settings.storage.service';
 
+import { DbConnService } from './services/db-conn/db.conn.service';
+
 
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   declarations: [
     AppComponent,
@@ -43,11 +46,13 @@ import { SettingsStorageService } from './services/settings-storage/settings.sto
     BrandFooterComponent,
     ContextualMenuButtonComponent,
     FabricContextualMenuWrapperComponent,
-    FabricTextFieldWrapperComponent
+    FabricTextFieldWrapperComponent,
+    
   ],
   providers: [ 
     WordDocumentService, 
-    SettingsStorageService
+    SettingsStorageService,
+    DbConnService
     ],
   bootstrap: [ AppComponent ]
 })

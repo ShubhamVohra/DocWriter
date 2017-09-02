@@ -4,7 +4,7 @@
     This file provides the HTML for the instructions view.
 -->
 
-<main class="ms-firstrun-instructionstep ms-font-l" id="main">
+<!-- <main class="ms-firstrun-instructionstep ms-font-l" id="main">
     <section class="ms-firstrun-instructionstep__header">
         <div class="ms-fontSize-xl ms-fontColor-themePrimary ">{{title}}</div>
         <div class="ms-font-m ms-fontColor-themePrimary ms-fontWeight-light">
@@ -32,4 +32,21 @@
             <sc-button [buttonlabel]="'Get Started'" [routerLink]="['/find-and-replace']"></sc-button>             
         </p>
     </div>
-</main>
+</main> -->
+
+
+<h2>O365 CORS Sample</h2>
+<label for="TxtOauthToken">OAuth Token: </label><input type="text" id="TxtOauthToken" size="80"/>
+<br />
+<label for="endpointUrl">Endpoint URL: </label><input type="text" id="endpoint" size="80" /> 
+<br />
+<input type="button" class="paddedElement"  value="Get Token"> 
+<input type="button" class="paddedElement" id="doCors" value="Make CORS Request" visibility="hidden" />
+<br /> 
+<br />
+<label for="results" class="hidden paddedElement" id="resultHeading">Results: </label>
+<br />
+<label id="debugMessage"></label>
+<pre id="results"></pre>
+
+

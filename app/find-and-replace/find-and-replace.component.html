@@ -6,19 +6,53 @@
 
 <sc-navigation-header></sc-navigation-header>
 
-<div class="ms-navigation__content">
-    <div class="ms-font-xl ms-navigation__content__title">Search and Replace</div>
+<div class="ms-navigation__content" *ngIf="data">
+    <sc-button [buttonlabel]="'Load '" (click)='loadData()'></sc-button>
+    <!-- <div class="ms-font-xl ms-navigation__content__title">Search and Replace</div>
     <label class="ms-Label">Find</label>
 
     <!-- Assign handlers to the textEntered event for each of the text boxes. -->
-    <of-textfield [innerlabel]="'Enter search string'" [id]="'searchString'" (textEntered)='onSearchTextEntered($event)'></of-textfield>
+    <!-- <of-textfield [innerlabel]="'Enter search string'" [id]="'searchString'" (textEntered)='onSearchTextEntered($event)'></of-textfield>
     <label class="ms-Label">Replace With</label>
     <of-textfield [innerlabel]="'Enter replace string'" [id]="'replaceString'" (textEntered)='onReplaceTextEntered($event)'></of-textfield>
-    <label class="ms-Label" >Skip Paragraph Number</label>
-    <of-textfield [innerlabel]="'Enter a paragraph number'" [id]="'excludedParagraph'" (textEntered)='onParagraphNumeralEntered($event)'></of-textfield>
-</div>
-<div class="ms-navigation__content">
-    <sc-button [buttonlabel]="'Replace'" (click)='replace()'></sc-button>
+    <label class="ms-Label">Skip Paragraph Number</label>
+    <of-textfield [innerlabel]="'Enter a paragraph number'" [id]="'excludedParagraph'" (textEntered)='onParagraphNumeralEntered($event)'></of-textfield>  -->
+    
+    <div *ngFor = "let cont of controls">
+       
+        <p>{{cont}}</p>
+    </div>
+
+    
+    
 </div>
 
-<sc-brand-footer></sc-brand-footer>
+<div *ngIf="!data">
+    
+    <li class="ms-ListItem" *ngFor='let agent of agents'>
+        <span class="ms-ListItem-primaryText">{{agent.tName}}</span>
+        <span class="ms-ListItem-secondaryText">
+                    <span class="ms-fontColor-themePrimary ">
+                        {{agent.tLink}}                            
+                    </span>
+        </span>
+        <div class="clearfix"></div>
+    </li>
+    <sc-button [buttonlabel]="'Push Data'" (click)='pushData()'></sc-button>
+    <sc-button [buttonlabel]="'Load Controls'" (click)='loadControl()'></sc-button>
+</div>
+<div class="ms-navigation__content" *ngIf="data">
+    <p>Enter the customer name: </p>
+    
+    <select (change)= "loadCustomerData($event.target.value)" >
+        <option *ngFor="let cust of customers"  >
+            <p >{{cust.company}}</p>
+        </option>
+    </select>
+    <sc-button [buttonlabel]="'Load Control'" (click)='loadControl()'></sc-button>
+    <sc-button [buttonlabel]="'Create New'" (click)='createNew()'></sc-button>
+    <sc-button [buttonlabel]="'Load Ooxml'" (click)='loadOoxml()'></sc-button>
+</div>
+
+
+<!--   -->

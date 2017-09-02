@@ -17,7 +17,7 @@
   <ProviderName>MAX Developer Documentation</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-  <DisplayName DefaultValue="Style Checker" />
+  <DisplayName DefaultValue="EY " />
   <Description DefaultValue="Ensures consistency with company styling rules."/>
 
   <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
@@ -124,8 +124,8 @@
       </bt:Urls>
       <!-- ShortStrings max characters==125. -->
       <bt:ShortStrings>
-        <bt:String id="MAXDevDocs.TaskpaneButton.Label" DefaultValue="Show" />
-        <bt:String id="MAXDevDocs.Group1Label" DefaultValue="Style Checker" />
+        <bt:String id="MAXDevDocs.TaskpaneButton.Label" DefaultValue="EY" />
+        <bt:String id="MAXDevDocs.Group1Label" DefaultValue="EY" />
         <bt:String id="MAXDevDocs.Start.Title" DefaultValue="Get started with the Style Checker!" />
       </bt:ShortStrings>
       <!-- LongStrings max characters==250. -->
